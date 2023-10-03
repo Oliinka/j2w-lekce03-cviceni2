@@ -10,7 +10,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 
 /**
- * Kontroler, který obsahuje dvě metody. Spring kontroler sám vytvoří a zvaolá správnou metodu v závislosti na tom, kterou adresu prohlížeč volá.
+ * Kontroler, který obsahuje dvě metody. Spring kontroler sám vytvoří a zavolá správnou metodu v závislosti na tom, kterou adresu prohlížeč volá.
  * <p>
  * Adresa {@code /} není pokrytá žádnou metodou kontroleru. Spring se v tom případě pokusí najít soubor {@code src/main/resources/static/index.ftlh}
  * a odeslat prohlížeči ten. V našem projektu takový soubor je, tím pádem se na úvodní obrazovce zobrazí příslušná úvodní stránka.
