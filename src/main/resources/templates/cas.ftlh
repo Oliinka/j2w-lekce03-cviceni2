@@ -22,7 +22,7 @@
         </ul>
     </header>
     <div class="px-4 py-5 my-5 text-center">
-        <h1>${cas}</h1>
+        <h1>${cas?time}</h1>
     </div>
 </div>
 </body>

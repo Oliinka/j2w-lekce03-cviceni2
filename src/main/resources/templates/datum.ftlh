@@ -22,7 +22,7 @@
         </ul>
     </header>
     <div class="px-4 py-5 my-5 text-center">
-        <h1>${datum}</h1>
+        <h1>${datum?date?string.full}</h1>
     </div>
 </div>
 </body>

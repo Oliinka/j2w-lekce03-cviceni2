@@ -6,8 +6,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
-import java.util.Locale;
 
 /**
  * Kontroler, který obsahuje dvě metody. Spring kontroler sám vytvoří a zavolá správnou metodu v závislosti na tom, kterou adresu prohlížeč volá.
@@ -19,42 +17,28 @@ import java.util.Locale;
  */
 @Controller
 public class DateTimeController {
-  /**
-   * České „locale“ – proměnnou použijeme dále ke specifikaci, že datum a čas chceme formátovat česky a pro ČR. Název měsíce tak bude česky.
-   */
-  private static final Locale LOCALE = Locale.forLanguageTag("cs-CZ");
-  /**
-   * Formátovač pro datum. Datum bude česky a bude se vypisovat ve formátu {@code d. MMMM yyyy} – tedy den v měsíci následovaný tečkou, pak měsíc celým slovem
-   * a nakonec čtyřmístný rok.
-   */
-  private static final DateTimeFormatter DATE_FORMATTER = DateTimeFormatter.ofPattern("d. MMMM yyyy", LOCALE);
-  /**
-   * Formátovač pro čas. Opět dle českých zvyklostí. Formát {@code H:mm} znamená, že na začátku bude hodina ve 24hodinovém formátu bez úvodní nuly (tj. např.
-   * 1 nebo 23), pak dvojtečka a za ní minuty s úvodní nulou (tj. třeba „00“).
-   */
-  private static final DateTimeFormatter TIME_FORMATTER = DateTimeFormatter.ofPattern("H:mm", LOCALE);
 
-  /**
-   * Metoda kontroleru zobrazující datum. Je Springem volaná v okamžiku, kdy prohlížeč požaduje adresu {@code /datum}.
-   *
-   * @return Sdružený objekt obsahující model a informace o view.
-   */
-  @GetMapping("/datum")
-  public ModelAndView datum() {
-    ModelAndView result = new ModelAndView("datum");
-    result.addObject("datum", LocalDate.now().format(DATE_FORMATTER));
-    return result;
-  }
+    /**
+     * Metoda kontroleru zobrazující datum. Je Springem volaná v okamžiku, kdy prohlížeč požaduje adresu {@code /datum}.
+     *
+     * @return Sdružený objekt obsahující model a informace o view.
+     */
+    @GetMapping("/datum")
+    public ModelAndView datum() {
+        ModelAndView result = new ModelAndView("datum");
+        result.addObject("datum", LocalDate.now());
+        return result;
+    }
 
-  /**
-   * Metoda kontroleru zobrazující čas. Je Springem volaná v okamžiku, kdy prohlížeč požaduje adresu {@code /cas}.
-   *
-   * @return Sdružený objekt obsahující model a informace o view.
-   */
-  @GetMapping("/cas")
-  public ModelAndView cas() {
-    ModelAndView result = new ModelAndView("cas");
-    result.addObject("cas", LocalTime.now().format(TIME_FORMATTER));
-    return result;
-  }
+    /**
+     * Metoda kontroleru zobrazující čas. Je Springem volaná v okamžiku, kdy prohlížeč požaduje adresu {@code /cas}.
+     *
+     * @return Sdružený objekt obsahující model a informace o view.
+     */
+    @GetMapping("/cas")
+    public ModelAndView cas() {
+        ModelAndView result = new ModelAndView("cas");
+        result.addObject("cas", LocalTime.now());
+        return result;
+    }
 }
