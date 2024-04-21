@@ -1,16 +1,16 @@
 [#ftl]
 <!DOCTYPE html>
-<html lang="cs">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Datum a čas</title>
+    <title>Date and time</title>
     [#include "_common/head.ftlh"]
 </head>
 <body>
 <div class="container">
     [#include '_common/header.ftlh']
     <div class="px-4 py-5 my-5 text-center">
-        <div>Vyberte si, zda chcete zobrazit datum nebo čas.</div>
+        <div>Choose date or time.</div>
     </div>
 </div>
 </body>
