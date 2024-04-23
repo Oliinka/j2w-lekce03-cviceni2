@@ -7,9 +7,12 @@ CSS framework [Bootstrap](https://getbootstrap.com).
 1. Udělej fork zdrojového repository do svého účtu na GitHubu.
 1. Naklonuj si repository **ze svého účtu** na GitHubu na lokální počítač.
 1. Úvodní stránku `static/index.html` převeď na šablonu Freemarkeru.
-2. Vytvoř soubor `templates/_common/header.ftlh`. Do této šablony umísti celou hlavičku stránky (HTML tag `<header>`).
-3. Pomocí `[#include]` Použij hlavičku ve všech třech stránkách.
+1. Vytvoř soubor `templates/_common/header.ftlh`. Do této šablony umísti celou hlavičku stránky (HTML tag `<header>`).
+1. Pomocí `[#include]` Použij hlavičku ve všech třech stránkách.
 1. Zkontroluj výsledek v prohlížeči.
+
+# Bonus
+1. Použij hodnotu `springMacroRequestContext.requestUri` pro zjištění, na které stránce se uživatel nachází, a podbarvení příslušného odkazu v menu pomocí třídy `active`.
 
 ## Mohlo by se hodit
 * odkaz na stránku [Lekce 3](https://java.czechitas.cz/2022-podzim/java-2-online/lekce-3.html)
